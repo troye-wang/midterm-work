@@ -73,7 +73,9 @@ def gradAscent(dataMatIn, classLabels):
 
 
 dataMat,labelMat=loadDataSet()
+#设置loadDataSet作为数组
 dataArr = array(dataMat)
+#dataArr打印数组
 theta = gradAscent(dataArr,labelMat)
 print (theta)
 plotBestFit(theta)

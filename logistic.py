@@ -28,7 +28,7 @@ def sigmoid(inX):
 def plotBestFit(theta):
     dataMat,labelMat = loadDataSet()       #导入数据和标签
     dataArr =array(dataMat)                #生成dataMat数组
-    n = shape(dataArr)[0]                  #数据个数
+    n = shape(dataArr)[0]                  #数据个数shape查看矩阵组数维数
     xcord1 = []                            #存放label为1的点
     ycord1 = []
     xcord2 = []                            #存放label为0的点
@@ -65,7 +65,7 @@ def plotBestFit(theta):
 
 #定义函数
 def gradAscent(dataMatIn, classLabels):
-    #生成举证
+    #生成矩阵
     dataMatrix = mat(dataMatIn)             #convert to NumPy matrix
     #生成矩阵并转置
     labelMat = mat(classLabels).transpose() #convert to NumPy matrix
@@ -88,7 +88,9 @@ def gradAscent(dataMatIn, classLabels):
 
 
 dataMat,labelMat=loadDataSet()
+ #loadDataSet设置为数据和标签
 dataArr = array(dataMat)
+#打印数组（没有,分割)
 theta = gradAscent(dataArr,labelMat)
 print (theta)
 plotBestFit(theta)
