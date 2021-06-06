@@ -43,9 +43,10 @@ def plotBestFit(theta):
     plt.show()
 
 def stocGradAscent(dataMatrix, classLabels):
-    m,n = shape(dataMatrix)
-    alpha = 0.01
+    m,n = shape(dataMatrix) #获取矩阵维数
+    alpha = 0.01    #步长同理
     weights = ones(n)   #initialize to all ones
+    #n个单位数组
     for i in range(m):
         h = sigmoid(sum(dataMatrix[i]*weights))
         error = classLabels[i] - h
